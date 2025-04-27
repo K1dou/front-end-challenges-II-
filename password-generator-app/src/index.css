@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Primary */
+  --color-Green-400: hsl(127, 100%, 82%);
+
+  /* Neutral */
+  --color-Black: hsl(0, 0%, 0%);
+  --color-White: hsl(0, 100%, 100%);
+  --color-Grey-950: hsl(255, 22%, 4%);
+  --color-Grey-900: hsl(248, 17%, 9%);
+  --color-Grey-850: hsl(248, 15%, 11%);
+  --color-Grey-800: hsl(248, 10%, 15%);
+  --color-Grey-700: hsl(248, 5%, 34%);
+  --color-Grey-600: hsl(251, 9%, 53%);
+  --color-Grey-200: hsl(252, 11%, 91%);
+
+  /* Accent */
+  --color-Yellow-300: hsl(42, 91%, 68%);
+  --color-Orange-400: hsl(13, 95%, 66%);
+  --color-Red-500: hsl(0, 91%, 63%);
+
+  /* Font */
+  --font-family-space: 'Space Mono', monospace;
+  --font-size-form: 24px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-family-space);
+    font-size: var(--font-size-form);
+  }
+}

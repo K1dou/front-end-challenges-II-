@@ -26,7 +26,7 @@ export default function InputMain({ onChange, value, type, inputClassName, onBlu
                 onChange={(e) => onChange?.(Number(e.target.value))}
                 value={value ?? ""}
                 name="input"
-                id="input"
+
                 placeholder="0"
                 className={`cursor-pointer text-Green-900 bg-Grey-50 pr-4 text-right text-[24px] font-bold placeholder:text-Grey-400 placeholder:text-[24px]   placeholder:font-bold placeholder:pl-6   h-9 w-full rounded-sm border-2 focus:outline-none 
                     
