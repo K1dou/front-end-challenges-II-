@@ -6,7 +6,9 @@ import Container from './components/Container'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Container> <App /></Container>
+    <Container className='bg-Grey-200 flex flex-col  items-center'>
+      <App />
+    </Container>
 
   </StrictMode>,
 )
