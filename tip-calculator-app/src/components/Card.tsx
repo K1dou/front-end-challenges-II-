@@ -1,12 +1,15 @@
+
 interface CardProps {
     tipAmount: number;
     total: number;
     inputClassName?: string;
+    onClickCustom: () => void;
+    isreset?: boolean;
 }
 
 
 
-export default function Card({ tipAmount, total, inputClassName }: CardProps) {
+export default function Card({ tipAmount, total, inputClassName, onClickCustom, isreset }: CardProps) {
 
 
     return (
@@ -24,7 +27,8 @@ export default function Card({ tipAmount, total, inputClassName }: CardProps) {
 
             </div>
 
-            <button className="lg:mt-17 bg-Green-400 text-Green-900 font-bold uppercase w-full text-center py-2 rounded-sm">Reset</button>
+
+            <button aria-label="button Reset" onClick={onClickCustom} className={`${isreset ? "bg-[#0D686D] text-[#085C61]" : " bg-Green-400 text-Green-900 lg:hover:bg-Grey-200 cursor-pointer"} lg:mt-17  font-bold uppercase w-full text-center py-2 rounded-sm `}>Reset</button>
 
         </div>
     )

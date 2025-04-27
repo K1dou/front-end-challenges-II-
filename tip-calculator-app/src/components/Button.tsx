@@ -1,25 +1,24 @@
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     value: number | "Custom";
-    color?: "main" | "active" | "custom";
+    isActive?: boolean;
+    color?: "custom";
 }
 
+export default function Button({ value, color, isActive, ...props }: ButtonProps) {
+    const isCustom = value === "Custom";
 
+    const baseClasses = "text-center font-bold rounded-sm py-1 w-[147px]";
+    const customStyle = "bg-Grey-50 text-Grey-500";
+    const activeStyle = "bg-Green-400 text-Green-900";
+    const inactiveStyle = "bg-Green-900 text-white";
 
-export default function Button({ value, color }: ButtonProps) {
+    const finalClass = `${baseClasses} ${isCustom ? customStyle : isActive ? activeStyle : inactiveStyle
+        }`;
 
 
     return (
-
-
-        <>
-            <button className={`text-center font-bold rounded-sm py-1 w-[147px] ${color === "main" ? "bg-Green-900 text-white" : color === "active" ? "bg-Green-400 text-Green-900" : color === "custom" ? "bg-Grey-50 text-Grey-500" : ""} `}>
-                {value === "Custom" ? "Custom" : value + "%"}
-            </button>
-
-
-        </>
-    )
-
-
-
+        <button className={finalClass} {...props}>
+            {isCustom ? "Custom" : `${value}%`}
+        </button>
+    );
 }
