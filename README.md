@@ -1,6 +1,4 @@
 
-✅ README.md para seu Password Generator App
-
 # Password Generator App 🔐
 
 A secure and responsive password generator built with **React**, **TypeScript**, and **Tailwind CSS** — inspired by a Frontend Mentor challenge.
