@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+@theme {
+  --layout-mobile-width: 375px;
+  --layout-desktop-width: 1440px;
+
+  --color-Very-Dark-Gray: hsl(0, 0%, 17%);
+  --color-Dark-Gray: hsl(0, 0%, 59%);
+
+  --font-family-rubik: 'Rubik', sans-serif;
+  --font-size-input: 18px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-family-rubik);
+    font-size: var(--font-size-input);
+    font-weight: var(--font-weight-regular);
+  }
+}
+
+@layer utilities {
+  .text-very-dark-gray {
+    color: var(--color-Very-Dark-Gray);
+  }
+  .text-dark-gray {
+    color: var(--color-Dark-Gray);
+  }
+}
