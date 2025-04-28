@@ -40,7 +40,7 @@ This project allows users to customize their password generation options with in
 
 | Desktop | Mobile |
 |--------|--------|
-| ![Desktop](./screenshots/desktop.png) | ![Mobile](./screenshots/mobile.png) |
+| ![Desktop](./screenshots/password-desktop.png) | ![Mobile](./screenshots/password-mobile.png) |
 
 ## Getting Started
 
