@@ -37,10 +37,9 @@ This project allows users to customize their password generation options with in
 [Live site on Vercel](https://password-generator-app-beige-three.vercel.app/) 
 
 ## Screenshots
-
 | Desktop | Mobile |
 |--------|--------|
-| ![Desktop](./screenshots/password-desktop.PNG) | ![Mobile](./screenshots/password-mobile.PNG) |
+| ![Desktop](./screenshot/password-desktop.PNG) | ![Mobile](./screenshot/password-mobile.PNG) |
 
 ## Getting Started
 
