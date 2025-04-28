@@ -20,7 +20,7 @@ function App() {
     <>
       <main className=' bg-black w-full flex flex-col items-center'>
 
-        <nav className='relative flex flex-col items-center z-10 bg-[url(/pattern-bg-mobile.png)] w-full h-[300px] '>
+        <nav className={`relative flex flex-col items-center z-10 bg-[url(/pattern-bg-mobile.png)] lg:bg-cover md:bg-[url(/pattern-bg-desktop.png)] w-full h-[300px] `}>
 
           <h1 className='text-center pt-5 font-bold text-[26px] text-white'>IP Address Tracker</h1>
 
