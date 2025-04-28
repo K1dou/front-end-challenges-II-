@@ -8,7 +8,7 @@ interface ContainerPros {
 
 export default function Container({ children, className }: ContainerPros) {
     return (
-        <div className={`flex justify-center min-h-screen w-full max-w-screen-md md:max-w-screen-lg lg:max-w-full mx-auto px-6  md:px-12 lg:px-20 ${className}`}>
+        <div className={`flex justify-center min-h-screen w-full max-w-screen-md md:max-w-screen-lg lg:max-w-full mx-auto px-0  md:px-12 lg:px-20 ${className}`}>
             {children}
         </div>
     )
