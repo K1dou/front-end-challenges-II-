@@ -6,7 +6,7 @@ import Container from './components/Container.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Container>
+    <Container className='bg-password-gradient'>
       <App />
     </Container>
   </StrictMode>,

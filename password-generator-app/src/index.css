@@ -23,6 +23,14 @@
   /* Font */
   --font-family-space: 'Space Mono', monospace;
   --font-size-form: 24px;
+
+  --gradient-password: linear-gradient(to right, #14131b, #08070b);
+}
+
+@layer utilities {
+  .bg-password-gradient {
+    background: var(--gradient-password);
+  }
 }
 
 @layer base {
@@ -30,4 +38,13 @@
     font-family: var(--font-family-space);
     font-size: var(--font-size-form);
   }
+}
+.slider-thumb-custom::-webkit-slider-thumb {
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background-color: hsl(0, 100%, 100%);
+  border: 2px solid white;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
