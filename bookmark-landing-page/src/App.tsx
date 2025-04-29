@@ -7,6 +7,7 @@ import React from 'react';
 import InputEmail from './components/FormEmail';
 import FormEmail from './components/FormEmail';
 import AskedQuestion from './components/AskedQuestions';
+import Footer from './components/Footer';
 function App() {
   
 
@@ -14,7 +15,7 @@ function App() {
   return (
         <>
     
-        <AskedQuestion/>
+        <Footer/>
 
         </>
        )
@@ -76,8 +77,7 @@ export default App
 
   // Download the extension
 
-  // We’ve got more browsers in the pipeline. Please do let us know if you’ve 
-  // got a favourite you’d like us to prioritize.
+
 
   // Add to Chrome
   // Minimum version 62
