@@ -4,30 +4,31 @@ import Card from './components/Card'
 import './index.css'
 import { data } from "./data/dataAccordion";
 import React from 'react';
+import InputEmail from './components/FormEmail';
+import FormEmail from './components/FormEmail';
 function App() {
   
 
 
   return (
+        <>
     
-      <main className='flex flex-col items-center justify-center '>
+        <FormEmail/>
+
+        </>
+       )
         
-       
+{/*        
         {data.map((item, i) => {
                 return (
                     <AccordionMain key={i} title={item.question ?? ''} content={item.answer ?? ''} />
             )
           })}
-   
-
-
-
-
-
-
-      </main>
+    */}
+     
     
-  )
+  
+
 }
 
 export default App
