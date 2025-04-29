@@ -6,6 +6,7 @@ import { data } from "./data/dataAccordion";
 import React from 'react';
 import InputEmail from './components/FormEmail';
 import FormEmail from './components/FormEmail';
+import AskedQuestion from './components/AskedQuestions';
 function App() {
   
 
@@ -13,18 +14,12 @@ function App() {
   return (
         <>
     
-        <FormEmail/>
+        <AskedQuestion/>
 
         </>
        )
         
-{/*        
-        {data.map((item, i) => {
-                return (
-                    <AccordionMain key={i} title={item.question ?? ''} content={item.answer ?? ''} />
-            )
-          })}
-    */}
+
      
     
   
@@ -98,8 +93,7 @@ export default App
 
   // Frequently Asked Questions
   
-  // Here are some of our FAQs. If you have any other questions you’d like 
-  // answered please feel free to email us.
+
 
   // <!-- Question 1 -->
   // What is Bookmark?
