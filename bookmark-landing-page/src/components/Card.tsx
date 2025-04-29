@@ -10,7 +10,7 @@ export default function Card() {
 
             <img className="mb-6" src="/bg-dots.svg" alt="" />
 
-            <button className="shadow-lg bg-Blue-600 py-[11px] px-8 text-[14px] text-white rounded-[6px]">Add & install Extension</button>
+            <button className="shadow-xl bg-Blue-600 py-[11px] px-8 text-[14px] text-white rounded-[6px]">Add & install Extension</button>
 
         </div>
 
