@@ -1,3 +1,4 @@
+import Card from './components/Card'
 import './index.css'
 
 function App() {
@@ -5,7 +6,10 @@ function App() {
 
   return (
     <>
-      <h1 className='text-blue-300'>teste</h1>
+      <main className='flex items-center justify-center min-h-screen '>
+        <Card />
+
+      </main>
     </>
   )
 }
