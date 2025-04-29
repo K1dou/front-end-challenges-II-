@@ -7,7 +7,7 @@ export default function Nav() {
 
 
     return (
-        <Container className="px-6 bg-white pt-13" >
+        <Container className="px-6 bg-white pt-10" >
 
             <div className={`${isOpen ? "opacity-0" : "flex justify-between"} `}>
                 <div><img src="/logo-bookmark.svg" alt="" /></div>

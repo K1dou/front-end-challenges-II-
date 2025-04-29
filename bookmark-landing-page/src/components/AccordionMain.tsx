@@ -1,4 +1,3 @@
-import { ChevronDownIcon } from "lucide-react"
 import {
     Accordion,
     AccordionContent,

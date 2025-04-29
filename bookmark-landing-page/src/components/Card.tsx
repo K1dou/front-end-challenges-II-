@@ -7,7 +7,7 @@ interface Props {
 export default function Card({ browser, minVersion, text }: Props) {
 
     return (
-        <div className="bg-white  flex flex-col items-center pt-9 pb-5 rounded-lg shadow-2xl">
+        <div className="bg-white  flex flex-col items-center pt-9 pb-5  rounded-lg shadow-2xl">
 
             <img className="h-19 w-19 mb-7" src={browser} alt="" aria-label="navegadorImagem" />
 

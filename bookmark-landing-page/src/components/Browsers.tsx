@@ -13,7 +13,7 @@ export default function Browsers() {
                 got a favourite you’d like us to prioritize.
             </p>
 
-            <div className="flex flex-col gap-10 mt-10">
+            <div className="flex flex-col gap-10 mt-10 px-7">
                 {dataBrowsers.map((item, i) => (
                     <Card key={i} browser={item.browser} minVersion={item.minVersion} text={item.text} />
                 ))}
