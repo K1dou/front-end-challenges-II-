@@ -30,7 +30,7 @@ export default function FormEmail() {
 
     return (
 
-        <Container className="flex flex-col items-center  bg-Blue-600 px-4 pt-13 ">
+        <Container className="flex flex-col items-center  bg-Blue-600 px-4 pt-16 ">
 
             <div>
                 <p className="text-center text-white text-[13px] uppercase tracking-[3px]">35,000+ Already joined</p>

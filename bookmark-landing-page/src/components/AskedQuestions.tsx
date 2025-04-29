@@ -8,7 +8,7 @@ export default function AskedQuestion() {
 
 
     return (
-        <Container className="bg-white pt-12 flex flex-col items-center pb-13">
+        <Container className="bg-white pt-12 flex flex-col items-center pb-25 px-4">
 
             <div className="px-[31px] mb-15 ">
 

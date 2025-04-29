@@ -5,7 +5,7 @@ export default function Footer() {
 
     return (
 
-        <Container className="bg-Blue-950 pt-9 flex flex-col items-center pb-10">
+        <Container className="bg-Blue-950 pt-9 flex flex-col items-center pb-15">
 
             <div className="flex  items-center gap-1">
                 <span className="rounded-full py-[4px] px-[4px] bg-Blue-600 flex items-center justify-center">

@@ -17,7 +17,7 @@ export default function AccordionMain({ title, content }: AccordionMainProps) {
 
 
         <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1" className="px-7">
+            <AccordionItem value="item-1" className="px-4">
                 <AccordionTrigger className="text-Blue-950 text-[14px]">
                     {title}
                 </AccordionTrigger>

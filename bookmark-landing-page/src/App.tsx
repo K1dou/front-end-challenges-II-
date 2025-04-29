@@ -8,14 +8,20 @@ import InputEmail from './components/FormEmail';
 import FormEmail from './components/FormEmail';
 import AskedQuestion from './components/AskedQuestions';
 import Footer from './components/Footer';
+import Browsers from './components/Browsers';
+import Nav from './components/Nav';
 function App() {
   
 
 
   return (
         <>
-    
+        {/* <Browsers/>
+        <AskedQuestion/>
+        <FormEmail/>
         <Footer/>
+     */}
+     <Nav/>
 
         </>
        )
