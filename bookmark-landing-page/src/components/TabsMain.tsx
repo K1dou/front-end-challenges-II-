@@ -1,9 +1,8 @@
 import {
     Tabs,
-    TabsContent,
     TabsList,
-    TabsTrigger,
-} from "./ui/tabs"
+    TabsTrigger
+} from "./ui/tabs";
 
 interface TabsMainProps {
     onClick: (value: "simpleBook" | "speedy" | "easy") => void;
@@ -21,8 +20,7 @@ export default function TabsMain({ onClick }: TabsMainProps) {
                     <TabsTrigger className="hover:lg:text-Red-400 " onClick={() => onClick("speedy")} value="Speedy">Speedy Searching</TabsTrigger>
                     <TabsTrigger className="hover:lg:text-Red-400 " onClick={() => onClick("easy")} value="Easy">Easy Sharing</TabsTrigger>
                 </TabsList>
-                {/* <TabsContent value="account">Make changes to your account here.</TabsContent>
-                <TabsContent value="password">Change your password here.</TabsContent> */}
+
             </Tabs>
 
         </>
