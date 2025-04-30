@@ -6,7 +6,7 @@ import Container from './components/Container.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Container className='bg-blue-300'>
+    <Container >
       <App />
     </Container>
   </StrictMode>,
