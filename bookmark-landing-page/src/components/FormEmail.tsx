@@ -32,14 +32,14 @@ export default function FormEmail() {
 
         <Container className="flex flex-col items-center  bg-Blue-600 px-4 pt-16 ">
 
-            <div>
+            <div className="max-w-[400px]">
                 <p className="text-center text-white text-[13px] uppercase tracking-[3px]">35,000+ Already joined</p>
                 <h1 className="text-white text-center text-[24px] mt-2">Stay up-to-date with what we're doing</h1>
             </div>
-            <form onSubmit={handleSubmit} className="flex flex-col  mt-8 pb-13">
+            <form onSubmit={handleSubmit} className="flex flex-col  mt-8 pb-13 lg:flex-row lg:gap-4 lg:items-start lg:justify-center lg:">
 
-                <div className={`flex flex-col ${error ? "outline-Red-400 outline-[2px] rounded-[5px]" : ""}`}>
-                    <div className="relative">
+                <div className={`flex flex-col ${error ? "outline-Red-400 outline-[2px] rounded-[5px]" : ""} `}>
+                    <div className="relative ">
                         {error && (
                             <span className="absolute right-3 bottom-[12px]">
                                 <img src="/icon-error.svg" alt="error icon" />
@@ -50,7 +50,7 @@ export default function FormEmail() {
                             onChange={handleChange}
                             type="text"
                             placeholder="Enter your email address"
-                            className={`bg-white pl-4 w-70 ${error ? "rounded-t-[4px]" : "rounded-[4px]"
+                            className={`bg-white pl-4 w-70 lg:w-58 ${error ? "rounded-t-[4px]" : "rounded-[4px]"
                                 } py-[11px] text-[13px] font-regular placeholder:text-gray-300 text-Blue-950 focus:outline-none`}
                         />
                     </div>
@@ -65,7 +65,7 @@ export default function FormEmail() {
                     </span>
                 </div>
 
-                <button type="submit" className=" outline-Red-400 outline-[1px] bg-Red-400 text-center px-[124px] py-[11px] rounded-[4px] text-white text-[13px] mt-[10px]">Contact Us</button>
+                <button aria-label="botao contact us" type="submit" className=" outline-Red-400 outline-[1px] lg:cursor-pointer  bg-Red-400 text-center px-[124px] py-[11px] lg:px-[43px] lg:py-[11px]  rounded-[4px] text-white text-[13px] mt-[10px] lg:mt-[1px] lg:hover:bg-white  lg:hover:text-Red-400 lg:hover:outline-Red-400 lg:hover:outline-2">Contact Us</button>
 
             </form>
 

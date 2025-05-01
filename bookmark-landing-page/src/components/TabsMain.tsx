@@ -13,8 +13,13 @@ export default function TabsMain({ onClick }: TabsMainProps) {
     return (
         <>
             <Tabs defaultValue="account" className="w-[400px] flex items-center pt-9">
-                <TabsList className="flex flex-col h-28 w-full px-9 items-center justify-center">
-                    <div className="w-full h-1 text-gray-200 border-b"></div>
+                <TabsList className="flex flex-col h-28 w-full px-9 items-center justify-center lg:flex-row lg:gap-20">
+                    <div className="lg:hidden w-full h-1 text-gray-200 border-b"></div>
+
+
+
+
+
 
                     <TabsTrigger className="hover:lg:text-Red-400 " onClick={() => onClick("simpleBook")} value="account">Simple Bookmarking</TabsTrigger>
                     <TabsTrigger className="hover:lg:text-Red-400 " onClick={() => onClick("speedy")} value="Speedy">Speedy Searching</TabsTrigger>

@@ -1,17 +1,49 @@
 import { useState } from "react";
 import Container from "./Container";
 
-export default function Nav() {
+interface NavProps {
+    className?: string;
+}
+
+export default function Nav({ className }: NavProps) {
 
     const [isOpen, setIsOpen] = useState(false);
 
 
     return (
-        <Container className="px-6 bg-white pt-10" >
+        <Container className={`px-6 bg-white pt-10 md:px-12 ${className}`} >
 
-            <div className={`${isOpen ? "opacity-0" : "flex justify-between"} `}>
+
+
+            <div className="hidden lg:flex justify-around items-center">
+                <div>
+                    <img src="/logo-bookmark.svg" alt="" />
+                </div>
+
+                <div className="flex items-center gap-8  text-Blue-950  text-[15px]">
+                    <a href="#" className="uppercase hover:text-Red-400">Features</a>
+                    <a href="#" className="uppercase hover:text-Red-400">Princing</a>
+                    <a href="#" className="uppercase hover:text-Red-400">Contact</a>
+                    <button aria-label="button login" className="cursor-pointer uppercase py-2 px-8 rounded-[6px] shadow-xl text-white hover:text-Red-400 hover:bg-white hover:outline-2 hover:outline-Red-400 bg-Red-400">Login</button>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div className={`${isOpen ? "opacity-0 lg:hidden" : "lg:hidden flex justify-between"} `}>
                 <div><img src="/logo-bookmark.svg" alt="" /></div>
                 <button
+                    aria-label="button menu"
                     onClick={() => setIsOpen(true)}
                 ><img src="/icon-hamburger.svg" alt="" /></button>
             </div>
@@ -30,6 +62,7 @@ export default function Nav() {
                     </div>
 
                     <button
+                        aria-label="button close menu"
                         onClick={() => setIsOpen(false)}
                         className="absolute top-15 right-6"
                     >
@@ -49,7 +82,7 @@ export default function Nav() {
 
                         <div className="w-[310px] h-[1px] bg-gray-500"></div>
 
-                        <button className="border-2 px-26 py-2 rounded-[6px] mt-2 tracking-widest">
+                        <button aria-label="button login" className="border-2 px-26 py-2 rounded-[6px] mt-2 tracking-widest">
                             LOGIN
                         </button>
                     </nav>

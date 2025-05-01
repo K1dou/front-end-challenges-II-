@@ -15,9 +15,9 @@ export default function AccordionMain({ title, content }: AccordionMainProps) {
 
 
 
-        <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1" className="px-4">
-                <AccordionTrigger className="text-Blue-950 text-[14px]">
+        <Accordion type="single" collapsible className="w-full ">
+            <AccordionItem value="item-1" className="px-4 ">
+                <AccordionTrigger className="text-Blue-950 text-[14px] lg:cursor-pointer lg:hover:text-Red-400">
                     {title}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-500 text-[14px]  leading-[30px]">
