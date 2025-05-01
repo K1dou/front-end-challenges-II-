@@ -9,6 +9,8 @@ import LayoutMain from './layouts/LayoutMain'
 import { FormProvider } from './contexts/FormContext'
 import CardStep3 from './components/CardStep3'
 import CardStep4 from './components/CardStep4'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import StepRouter from './components/StepRouter'
 
 function App() {
 
@@ -17,11 +19,19 @@ function App() {
 
   return (
     <>
-      <FormProvider>
-        <LayoutMain>
-          <CardStep4 />
-        </LayoutMain>
-      </FormProvider>
+      <BrowserRouter>
+        <FormProvider>
+          <Routes>
+            <Route path="/" element={<Navigate to="/step/1" />} />
+            <Route path="/step/:id" element={
+              <LayoutMain>
+                <StepRouter />
+              </LayoutMain>
+            } />
+          </Routes>
+        </FormProvider>
+      </BrowserRouter>
+
     </>
   )
 }

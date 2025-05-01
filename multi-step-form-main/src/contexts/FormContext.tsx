@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 type FormContextType = {
     isYearly: boolean;
@@ -7,6 +7,9 @@ type FormContextType = {
     toggleAddOn: (id: string) => void;
     selectedPlan: Plan;
     setSelectedPlan: (plan: Plan) => void;
+    currentStep: number;
+    setCurrentStep: (step: number) => void;
+
 };
 
 type Plan = {
@@ -35,6 +38,7 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
         price: { month: "$9/mo", year: "$90/yr" },
     });
 
+    const [currentStep, setCurrentStep] = useState(1);
 
 
     const [addOns, setAddOns] = useState<AddOn[]>([
@@ -68,8 +72,20 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
         );
     }
 
+    const value = useMemo(() => ({
+        isYearly,
+        setIsYearly,
+        addOns,
+        toggleAddOn,
+        selectedPlan,
+        setSelectedPlan,
+        currentStep,
+        setCurrentStep
+    }), [isYearly, addOns, selectedPlan, currentStep]);
+
+
     return (
-        <FormContext.Provider value={{ isYearly, setIsYearly, addOns, toggleAddOn, selectedPlan, setSelectedPlan }}>
+        <FormContext.Provider value={value}>
             {children}
         </FormContext.Provider>
     );

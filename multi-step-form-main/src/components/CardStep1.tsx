@@ -1,6 +1,8 @@
+import { useFormContext } from "@/contexts/FormContext";
 import { useState } from "react";
 
 export default function CardStep1() {
+    const { setCurrentStep } = useFormContext();
 
     const [formData, setFormData] = useState({
         name: "",

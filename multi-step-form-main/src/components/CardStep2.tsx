@@ -30,7 +30,7 @@ export default function CardStep2() {
 
                     <span
                         onClick={() => handleClick("arcade")}
-                        className={`flex items-start justify-start gap-3 mt-8 mb-4 border  rounded-[8px] py-3 px-3 ${isActive === "arcade" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
+                        className={`flex items-start justify-start gap-3 mt-8 mb-4 border  rounded-[8px] py-3 px-3 ${selectedPlan.id === "arcade" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
                         <img className="mt-[6px]" src="/icon-arcade.svg" alt="" />
                         <div >
                             <h1 className="text-Blue-950 font-medium text-[18px]">Arcade</h1>
@@ -43,7 +43,7 @@ export default function CardStep2() {
 
                     <span
                         onClick={() => handleClick("advanced")}
-                        className={`flex items-start justify-start gap-3 mt-8 mb-4 border  rounded-[8px] py-3 px-3 ${isActive === "advanced" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
+                        className={`flex items-start justify-start gap-3 mt-8 mb-4 border  rounded-[8px] py-3 px-3 ${selectedPlan.id === "advanced" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
                         <img className="mt-[6px]" src="/icon-advanced.svg" alt="" />
                         <div >
                             <h1 className="text-Blue-950 font-medium text-[18px]">Advanced</h1>
@@ -54,7 +54,7 @@ export default function CardStep2() {
                     </span>
                     <span
                         onClick={() => handleClick("pro")}
-                        className={`flex items-start justify-start gap-3 mt-8 mb-4 border  rounded-[8px] py-3 px-3 ${isActive === "pro" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
+                        className={`flex items-start justify-start gap-3 mt-8 mb-4 border  rounded-[8px] py-3 px-3 ${selectedPlan.id === "pro" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
                         <img className="mt-[6px]" src="/icon-pro.svg" alt="" />
                         <div >
                             <h1 className="text-Blue-950 font-medium text-[18px]">Pro</h1>
