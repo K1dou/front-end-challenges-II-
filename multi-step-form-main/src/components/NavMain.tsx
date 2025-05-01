@@ -11,7 +11,7 @@ export default function NavMain() {
     return (
 
 
-        <Container className="bg-[url(/bg-sidebar-mobile.svg)]  ">
+        <Container className="bg-[url(/bg-sidebar-mobile.svg)] bg-cover  ">
 
             <div className="flex items-center justify-center gap-4 pt-8 pb-26">
                 {steps.map((step, index) => (

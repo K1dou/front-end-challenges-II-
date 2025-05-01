@@ -1,3 +1,4 @@
+import CardStep1 from './components/CardStep1'
 import Container from './components/Container'
 import FooterMain from './components/FooterMain'
 import NavMain from './components/NavMain'
@@ -8,7 +9,10 @@ function App() {
 
   return (
     <>
-      <FooterMain />
+      <LayoutMain>
+        <CardStep1 />
+
+      </LayoutMain>
     </>
   )
 }
