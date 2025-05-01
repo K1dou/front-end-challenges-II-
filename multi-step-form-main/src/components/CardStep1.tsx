@@ -1,6 +1,23 @@
+import { useState } from "react";
 import Container from "./Container";
 
 export default function CardStep1() {
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: ""
+    });
+
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    }
+
+
 
     return (
         <div className="bg-Blue-100 flex-1 relative">
@@ -16,13 +33,13 @@ export default function CardStep1() {
 
                     <form className="flex flex-col mt-6 ">
                         <label className="text-Blue-950 text-[14px]" htmlFor="name">Name</label>
-                        <input className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g.Stephen King" name="name" type="text" />
+                        <input value={formData.name} onChange={handleChange} className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g.Stephen King" name="name" type="text" />
 
                         <label className="text-Blue-950 text-[14px]" htmlFor="email">Email Address</label>
-                        <input className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g.stephenKing@lorem.com" name="email" type="text" />
+                        <input value={formData.email} onChange={handleChange} className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g.stephenKing@lorem.com" name="email" type="text" />
 
                         <label className="text-Blue-950 text-[14px]" htmlFor="phone">Phone Number</label>
-                        <input className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g. +1 234 567 890" name="phone" type="number" />
+                        <input value={formData.phone} onChange={handleChange} className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g. +1 234 567 890" name="phone" type="number" />
 
 
 
