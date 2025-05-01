@@ -6,14 +6,17 @@ import { useFormContext } from "@/contexts/FormContext";
 
 export default function CardStep2() {
 
-    const { isYearly, setIsYearly } = useFormContext();
-
-    const [isActive, setActiveIndex] = useState<"arcade" | "advanced" | "pro">("arcade");
+    const { isYearly, setIsYearly, selectedPlan, setSelectedPlan } = useFormContext();
 
     function handleClick(plan: "arcade" | "advanced" | "pro") {
-        setActiveIndex(plan);
-    }
+        const plans = {
+            arcade: { id: "arcade", title: "Arcade", price: { month: "+$9/mo", year: "+$90/yr" } },
+            advanced: { id: "advanced", title: "Advanced", price: { month: "+$12/mo", year: "+$120/yr" } },
+            pro: { id: "pro", title: "Pro", price: { month: "+$15/mo", year: "+$150/yr" } },
+        };
 
+        setSelectedPlan(plans[plan]);
+    }
 
     return (
         <div className="bg-Blue-100 flex-1 relative">

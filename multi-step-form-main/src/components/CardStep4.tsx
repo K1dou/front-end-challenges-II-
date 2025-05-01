@@ -5,9 +5,33 @@ import { useFormContext } from "@/contexts/FormContext";
 
 export default function CardStep4() {
 
-    const { addOns, toggleAddOn } = useFormContext();
+    const { selectedPlan, addOns } = useFormContext()
 
     const { isYearly } = useFormContext()
+
+    const billingLabel = isYearly ? "Yearly" : "Monthly";
+    const billingLabelTotal = isYearly ? "per year" : "per month";
+
+    const totalMonthly =
+        parseFloat(selectedPlan.price.month.replace(/[^0-9.-]+/g, "")) +
+        addOns.reduce((acc, addon) => {
+            if (addon.selected) {
+                return acc + parseFloat(addon.price.month.replace(/[^0-9.-]+/g, ""));
+            }
+            return acc;
+        }, 0);
+
+    const totalYearly =
+        parseFloat(selectedPlan.price.year.replace(/[^0-9.-]+/g, "")) +
+        addOns.reduce((acc, addon) => {
+            if (addon.selected) {
+                return acc + parseFloat(addon.price.year.replace(/[^0-9.-]+/g, ""));
+            }
+            return acc;
+        }, 0);
+
+    const totalMonthlyLabel = `$${totalMonthly}/mo`;
+    const totalYearlyLabel = `$${totalYearly}/yr`;
 
 
 
@@ -25,19 +49,31 @@ export default function CardStep4() {
                     <div className="mt-6 rounded-[8px] bg-[#F8F9FE] py-4 px-3 ">
                         <div className="flex justify-between">
                             <div>
-                                <p className="text-Blue-950 font-semibold text-[15px]">Arcade (Monthly)</p>
+                                <p className="text-Blue-950 font-semibold text-[15px]">{selectedPlan.title} ({billingLabel})</p>
                                 <p className="text-Grey-500 underline text-[14px]">Change</p>
                             </div>
-                            <span className="font-bold mt-3 text-Blue-950 text-[14px]">$9/mo</span>
+                            <span className="font-bold mt-3 text-Blue-950 text-[14px]">{isYearly ? selectedPlan.price.year : selectedPlan.price.month}</span>
 
 
                         </div>
 
                         <div className="w-full border-t border-gray-300 my-4"></div>
                         <div>
-                            <div className="flex justify-between">
-                                <p className="text-Grey-500 text-[14px]">Online Service</p>
-                                <span className="text-Blue-950">+$1/mo</span>
+
+                            <div className="flex flex-col justify-between">
+
+                                {addOns.map((addons) => (
+                                    addons.selected &&
+                                    <div key={addons.id} className="flex mb-2 flex-col ">
+                                        <div className="flex  flex-row justify-between">
+                                            <p className="text-Grey-500 text-[14px]">{addons.title}</p>
+                                            <span className="font-bold  text-Blue-950 text-[14px]">{isYearly ? addons.price.year : addons.price.month}</span>
+                                        </div>
+                                    </div>
+
+                                ))}
+
+
                             </div>
 
                         </div>
@@ -46,8 +82,8 @@ export default function CardStep4() {
                     </div>
 
                     <div className="flex justify-between px-3 mt-5">
-                        <p className="text-Grey-500 text-[15px]">Total (per month)</p>
-                        <span className="font-bold  text-Purple-600  text-[15px]">+$12/mo</span>
+                        <p className="text-Grey-500 text-[15px]">Total ({billingLabelTotal})</p>
+                        <span className="font-bold  text-Purple-600  text-[15px]"> {isYearly ? totalYearlyLabel : totalMonthlyLabel}</span>
                     </div>
 
 

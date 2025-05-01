@@ -5,7 +5,15 @@ type FormContextType = {
     setIsYearly: (value: boolean) => void;
     addOns: AddOn[];
     toggleAddOn: (id: string) => void;
+    selectedPlan: Plan;
+    setSelectedPlan: (plan: Plan) => void;
 };
+
+type Plan = {
+    id: string;
+    title: string;
+    price: { month: string, year: string };
+}
 
 type AddOn = {
     id: string;
@@ -21,6 +29,14 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
 
     const [isYearly, setIsYearly] = useState(false);
 
+    const [selectedPlan, setSelectedPlan] = useState<Plan>({
+        id: "arcade",
+        title: "Arcade",
+        price: { month: "$9/mo", year: "$90/yr" },
+    });
+
+
+
     const [addOns, setAddOns] = useState<AddOn[]>([
         {
             id: "online",
@@ -33,7 +49,7 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
             id: "storage",
             title: "Larger storage",
             description: "Extra 1TB of cloud save",
-            price: { month: "+$1/mo", year: "+$20/yr" },
+            price: { month: "+$2/mo", year: "+$20/yr" },
             selected: false,
         },
         {
@@ -53,7 +69,7 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
     }
 
     return (
-        <FormContext.Provider value={{ isYearly, setIsYearly, addOns, toggleAddOn }}>
+        <FormContext.Provider value={{ isYearly, setIsYearly, addOns, toggleAddOn, selectedPlan, setSelectedPlan }}>
             {children}
         </FormContext.Provider>
     );
