@@ -10,9 +10,9 @@ export default function SessionTopo() {
 
             <div className="lg:flex lg:flex-row-reverse lg:pb-38">
 
-                <div className=" flex justify-end w-full h-[235px]   mt-35 lg:mt-0">
+                <div className=" flex justify-end w-full h-[235px] lg:mt-0">
 
-                    <div className="relative flex justify-end w-full h-[235px] mt-35 lg:mt-1 lg:h-[630px]">
+                    <div className="relative pb-30 flex justify-end w-full h-[235px] mt-35 lg:mt-1 lg:h-[630px]">
                         {/* Fundo azul — fica posicionado à esquerda */}
                         <div className="absolute bottom-0 right-0 h-38 w-[70vw] max-w-[350px] lg:max-w-none bg-Blue-600 rounded-l-[250px] lg:h-100 lg:w-[600px] z-0" />
 
@@ -27,9 +27,9 @@ export default function SessionTopo() {
 
                 </div>
 
-                <div className="lg:ml-60 lg:mt-2 lg:max-w-[470px] lg:flex lg:flex-col lg:items-start lg:justify-start ">
+                <div className="lg:ml-60  lg:mt-2 lg:max-w-[470px] lg:flex lg:flex-col lg:items-start lg:justify-start ">
 
-                    <div className="px-4 pt-4 lg:px-0">
+                    <div className="px-4 pt-40 lg:px-0">
                         <h1 className="text-center lg:text-start mt-8 text-[30px] font-medium lg:text-[50px] text-Blue-950">A Simple Bookmark Manager</h1>
                         <p className="text-center lg:text-start text-gray-500 text-[14px] lg:text-[16px] text-pretty">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
                     </div>
