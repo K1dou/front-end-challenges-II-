@@ -1,15 +1,5 @@
-import { useState } from "react";
-import CheckboxMain from "./CheckboxMain";
 import { useFormContext } from "@/contexts/FormContext";
-
-
-type AddOn = {
-    id: string;
-    title: string;
-    description: string;
-    price: string;
-    selected: boolean;
-};
+import CheckboxMain from "./CheckboxMain";
 
 export default function CardStep3() {
 
