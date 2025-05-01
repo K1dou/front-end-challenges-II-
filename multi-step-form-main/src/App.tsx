@@ -8,6 +8,7 @@ import './index.css'
 import LayoutMain from './layouts/LayoutMain'
 import { FormProvider } from './contexts/FormContext'
 import CardStep3 from './components/CardStep3'
+import CardStep4 from './components/CardStep4'
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
     <>
       <FormProvider>
         <LayoutMain>
-          <CardStep3 />
+          <CardStep4 />
         </LayoutMain>
       </FormProvider>
     </>
