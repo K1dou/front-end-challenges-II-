@@ -27,7 +27,7 @@ export default function SessionTopo() {
 
                 </div>
 
-                <div className="lg:ml-70 lg:mt-2 lg:max-w-[470px] lg:flex lg:flex-col lg:items-start lg:justify-start ">
+                <div className="lg:ml-60 lg:mt-2 lg:max-w-[470px] lg:flex lg:flex-col lg:items-start lg:justify-start ">
 
                     <div className="px-4 pt-4 lg:px-0">
                         <h1 className="text-center lg:text-start mt-8 text-[30px] font-medium lg:text-[50px] text-Blue-950">A Simple Bookmark Manager</h1>
