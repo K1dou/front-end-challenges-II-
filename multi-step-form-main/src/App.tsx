@@ -7,6 +7,7 @@ import NavMain from './components/NavMain'
 import './index.css'
 import LayoutMain from './layouts/LayoutMain'
 import { FormProvider } from './contexts/FormContext'
+import CardStep3 from './components/CardStep3'
 
 function App() {
 
@@ -17,10 +18,7 @@ function App() {
     <>
       <FormProvider>
         <LayoutMain>
-
-
-          <CardStep2 />
-
+          <CardStep3 />
         </LayoutMain>
       </FormProvider>
     </>
