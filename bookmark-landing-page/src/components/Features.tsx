@@ -45,7 +45,7 @@ export default function Features() {
 
     return (
         <>
-            <Container className="px-8 bg-white pt-22 pb-25 flex items-center flex-col md:px-12" >
+            <Container className="px-8 bg-white pt-22 pb-25 flex items-center flex-col " >
 
                 <div className="lg:w-[500px]">
                     <h1 className="text-center font-medium text-Blue-950 text-[21px] lg:text-[32px] ">Features</h1>

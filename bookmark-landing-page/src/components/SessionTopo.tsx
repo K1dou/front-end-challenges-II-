@@ -10,14 +10,21 @@ export default function SessionTopo() {
 
             <div className="lg:flex lg:flex-row-reverse lg:pb-38">
 
-                <div className="relative flex justify-end w-full h-[235px]  mt-35">
-                    <div className=" h-38 w-[70vw] max-w-[350px] lg:max-w-none bg-Blue-600 rounded-l-[250px] lg:h-100 lg:w-[600px]  z-0"></div>
+                <div className=" flex justify-end w-full h-[235px]   mt-35 lg:mt-0">
 
-                    <img
-                        src="/illustration-hero.svg"
-                        alt=""
-                        className="absolute -top-15 right-4 lg:-top-44 lg:left-42 z-10 h-[235px] w-[335px] lg:h-[630px] lg:w-[880px] "
-                    />
+                    <div className="relative flex justify-end w-full h-[235px] mt-35 lg:mt-1 lg:h-[630px]">
+                        {/* Fundo azul — fica posicionado à esquerda */}
+                        <div className="absolute bottom-0 right-0 h-38 w-[70vw] max-w-[350px] lg:max-w-none bg-Blue-600 rounded-l-[250px] lg:h-100 lg:w-[600px] z-0" />
+
+                        {/* Imagem — acima do fundo */}
+                        <img
+                            src="/illustration-hero.svg"
+                            alt=""
+                            className="absolute -top-15 right-4 lg:-top-10 lg:right-0 z-10 h-[235px] w-[335px] lg:h-[630px] lg:w-[880px]"
+                        />
+                    </div>
+
+
                 </div>
 
                 <div className="lg:ml-70 lg:mt-2 lg:max-w-[470px] lg:flex lg:flex-col lg:items-start lg:justify-start ">
