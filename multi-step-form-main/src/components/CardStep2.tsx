@@ -20,7 +20,7 @@ export default function CardStep2() {
     return (
         <div className="bg-Blue-100 flex-1 relative">
 
-            <div className="w-[90%] max-h-[calc(100dvh-100px)] overflow-y-auto	 mx-auto  bg-White absolute -top-[69px]  py-6  left-1/2 transform -translate-x-1/2  rounded-lg  shadow-lg flex flex-col gap-4">
+            <div className="w-[90%] max-h-[calc(100dvh-190px)] overflow-y-auto pb-[110px]	 mx-auto  bg-White absolute -top-[69px]  py-6  left-1/2 transform -translate-x-1/2  rounded-lg  shadow-lg flex flex-col gap-4">
 
                 <div className="mx-auto w-[85%] ">
 
