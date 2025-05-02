@@ -9,8 +9,24 @@ type FormContextType = {
     setSelectedPlan: (plan: Plan) => void;
     currentStep: number;
     setCurrentStep: (step: number) => void;
+    formData: FormData;
+    setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+    formErrors: FormErrors;
+    setFormErrors: React.Dispatch<React.SetStateAction<FormErrors>>;
 
 };
+
+type FormErrors = {
+    name?: string;
+    email?: string;
+    phone?: string;
+};
+
+type FormData = {
+    name: string;
+    email: string;
+    phone: string;
+}
 
 type Plan = {
     id: string;
@@ -29,6 +45,14 @@ type AddOn = {
 const FormContext = createContext<FormContextType | undefined>(undefined);
 
 export function FormProvider({ children }: { children: React.ReactNode }) {
+
+    const [formErrors, setFormErrors] = useState<FormErrors>({});
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: ""
+    });
 
     const [isYearly, setIsYearly] = useState(false);
 
@@ -73,6 +97,10 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
     }
 
     const value = useMemo(() => ({
+        formErrors,
+        setFormErrors,
+        formData,
+        setFormData,
         isYearly,
         setIsYearly,
         addOns,
@@ -81,7 +109,7 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
         setSelectedPlan,
         currentStep,
         setCurrentStep
-    }), [isYearly, addOns, selectedPlan, currentStep]);
+    }), [isYearly, addOns, selectedPlan, currentStep, formData, formErrors]);
 
 
     return (

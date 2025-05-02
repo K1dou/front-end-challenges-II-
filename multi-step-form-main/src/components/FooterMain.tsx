@@ -2,15 +2,41 @@ import { useNavigate, useParams } from "react-router-dom";
 import Container from "./Container";
 import { useFormContext } from "@/contexts/FormContext";
 
+
+type FormErrors = {
+    name?: string;
+    email?: string;
+    phone?: string;
+};
 export default function FooterMain() {
 
     const { id } = useParams();
     const step = Number(id);
     const navigate = useNavigate();
-    const { setCurrentStep } = useFormContext();
+    const { formData, setFormErrors, setCurrentStep } = useFormContext();
 
+    function isStep1Valid() {
+        const errors: FormErrors = {};
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[0-9\s()+-]{10,}$/;
+
+        if (!formData.name.trim()) errors.name = "This field required";
+        if (!formData.email.trim()) errors.email = "This field is required";
+        if (!formData.phone.trim()) errors.phone = "This field is required";
+        if (!emailRegex.test(formData.email)) errors.email = "Invalid email";
+        if (!phoneRegex.test(formData.phone)) errors.phone = "Invalid phone";
+        setFormErrors(errors);
+
+        return Object.keys(errors).length === 0;
+
+    }
 
     function nextStep() {
+        if (step === 1 && !isStep1Valid()) {
+            return;
+        }
+
         setCurrentStep(step + 1);
         navigate(`/step/${step + 1}`);
     }

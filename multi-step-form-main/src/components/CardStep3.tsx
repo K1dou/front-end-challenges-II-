@@ -30,6 +30,7 @@ export default function CardStep3() {
                             <CheckboxMain
                                 onChange={() => toggleAddOn(addon.id)}
                                 id={addon.id}
+                                checked={addon.selected}
 
                             />
                             <div>

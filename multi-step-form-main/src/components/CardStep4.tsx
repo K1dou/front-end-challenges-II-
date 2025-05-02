@@ -1,7 +1,12 @@
 import { useFormContext } from "@/contexts/FormContext";
+import { useNavigate } from "react-router-dom";
 
 
 export default function CardStep4() {
+
+    const navigate = useNavigate()
+
+
 
     const { selectedPlan, addOns } = useFormContext()
 
@@ -48,7 +53,7 @@ export default function CardStep4() {
                         <div className="flex justify-between">
                             <div>
                                 <p className="text-Blue-950 font-semibold text-[15px]">{selectedPlan.title} ({billingLabel})</p>
-                                <p className="text-Grey-500 underline text-[14px]">Change</p>
+                                <p onClick={() => navigate("/step/2")} className="text-Grey-500 underline text-[14px]">Change</p>
                             </div>
                             <span className="font-bold mt-3 text-Blue-950 text-[14px]">{isYearly ? selectedPlan.price.year : selectedPlan.price.month}</span>
 

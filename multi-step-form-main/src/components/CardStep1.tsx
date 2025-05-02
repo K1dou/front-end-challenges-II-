@@ -1,13 +1,9 @@
-import { useState } from "react";
+import { useFormContext } from "@/contexts/FormContext";
 
 export default function CardStep1() {
 
+    const { formData, setFormData, formErrors } = useFormContext();
 
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: ""
-    });
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target;
@@ -15,6 +11,7 @@ export default function CardStep1() {
             ...prev,
             [name]: value
         }));
+        formErrors[name as keyof typeof formErrors] = "";
     }
 
 
@@ -32,14 +29,27 @@ export default function CardStep1() {
 
 
                     <form className="flex flex-col mt-6 ">
-                        <label className="text-Blue-950 text-[14px]" htmlFor="name">Name</label>
-                        <input value={formData.name} onChange={handleChange} className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g.Stephen King" name="name" type="text" />
 
-                        <label className="text-Blue-950 text-[14px]" htmlFor="email">Email Address</label>
-                        <input value={formData.email} onChange={handleChange} className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g.stephenKing@lorem.com" name="email" type="text" />
 
-                        <label className="text-Blue-950 text-[14px]" htmlFor="phone">Phone Number</label>
-                        <input value={formData.phone} onChange={handleChange} className="mb-4 border-[1px] rounded-[3px] h-10 border-gray-300 pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium" placeholder="e.g. +1 234 567 890" name="phone" type="number" />
+                        <label className="relative text-Blue-950 text-[14px]" htmlFor="name">
+                            Name
+
+                            {formErrors.name && <span className="absolute font-bold text-Red-500 text-[14px] right-0 top-0">{formErrors.name}</span>}
+                        </label>
+                        <input value={formData.name} onChange={handleChange} className={`mb-4 border-[1px] rounded-[3px] h-10  ${formErrors.name ? "border-Red-500" : "border-gray-300"} pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium`} placeholder="e.g.Stephen King" name="name" type="text" />
+
+
+                        <label className="relative text-Blue-950 text-[14px]" htmlFor="email">Email Address
+
+                            {formErrors.email && <span className="absolute font-bold text-Red-500 text-[14px] right-0 top-0">{formErrors.email}</span>}
+                        </label>
+                        <input value={formData.email} onChange={handleChange} className={`mb-4 border-[1px] rounded-[3px] h-10 ${formErrors.email ? "border-Red-500" : "border-gray-300"} pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium`} placeholder="e.g.stephenKing@lorem.com" name="email" type="text" />
+
+                        <label className="relative text-Blue-950 text-[14px]" htmlFor="phone">Phone Number
+
+                            {formErrors.phone && <span className="absolute font-bold text-Red-500 text-[14px] right-0 top-0">{formErrors.phone}</span>}
+                        </label>
+                        <input value={formData.phone} onChange={handleChange} className={`mb-4 border-[1px] rounded-[3px] h-10 ${formErrors.phone ? "border-Red-500" : "border-gray-300"} pl-4 placeholder:font-medium placeholder:text-Grey-500 focus:outline-none text-Blue-950 font-medium `} placeholder="e.g. +1 234 567 890" name="phone" type="number" />
 
 
 
