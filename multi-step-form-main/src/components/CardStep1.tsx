@@ -22,7 +22,7 @@ export default function CardStep1() {
     return (
         <div className="bg-Blue-100 flex-1 relative">
 
-            <div className="w-[90%] mx-auto bg-White absolute -top-[69px]  py-8  left-1/2 transform -translate-x-1/2  rounded-lg  shadow-lg flex flex-col gap-4">
+            <div className="w-[90%] mx-auto bg-White absolute -top-[69px]  py-6  left-1/2 transform -translate-x-1/2  rounded-lg  shadow-lg flex flex-col gap-4">
 
                 <div className="mx-auto w-[85%] ">
 
