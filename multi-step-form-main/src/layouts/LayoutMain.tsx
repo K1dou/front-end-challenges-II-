@@ -7,7 +7,7 @@ export default function LayoutMain({ children }: { children: React.ReactNode }) 
     return (
 
 
-        <div className="min-h-[90vh] flex flex-col">
+        <div className="min-h-[89vh] flex flex-col">
             <NavMain />
             <main className="flex-1 flex flex-col">
                 {children}
