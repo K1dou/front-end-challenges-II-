@@ -9,7 +9,7 @@ export default function SwitchToogle({ onCheckedChange, checked }: SwitchProps) 
 
 
     return (
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 ">
             <Switch
                 checked={checked}
                 onCheckedChange={onCheckedChange}

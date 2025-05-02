@@ -27,49 +27,53 @@ export default function CardStep2() {
                     <h1 className="text-Blue-950 font-bold text-2xl mb-2">Select your plan</h1>
                     <p className="text-Grey-500 text-[17px]">You have the option of monthly or yearly biling</p>
 
-                    <span
-                        onClick={() => handleClick("arcade")}
-                        className={`flex items-start justify-start gap-3 mt-6  border  rounded-[8px] py-2 px-3 ${selectedPlan.id === "arcade" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
-                        <img className="mt-[6px]" src="/icon-arcade.svg" alt="" />
-                        <div >
-                            <h1 className="text-Blue-950 font-medium text-[18px]">Arcade</h1>
-                            <p className="text-Grey-500">$90/yr</p>
-                            {isYearly && <p className="text-Blue-950 text-[13px] mt-1 ">2 months free</p>}
+                    <div className="contents lg:flex lg:gap-5 lg:mt-6">
+                        <span
+                            onClick={() => handleClick("arcade")}
+                            className={`flex items-start lg:cursor-pointer lg:flex-col lg:justify-between lg:w-[142px] lg:h-[166px]  justify-start gap-3 mt-6 lg:mt-4  border  rounded-[8px] py-2 px-3 ${selectedPlan.id === "arcade" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
+                            <img className="mt-[6px]" src="/icon-arcade.svg" alt="" />
+                            <div className="lg:pb-[3px]">
+                                <h1 className="text-Blue-950 font-medium text-[18px]">Arcade</h1>
+                                <p className="text-Grey-500">$90/yr</p>
+                                {isYearly && <p className="text-Blue-950 text-[13px] mt-1 ">2 months free</p>}
 
-                        </div>
+                            </div>
 
-                    </span>
+                        </span>
 
-                    <span
-                        onClick={() => handleClick("advanced")}
-                        className={`flex items-start justify-start gap-3 mt-4 mb-4 border  rounded-[8px] py-3 px-3 ${selectedPlan.id === "advanced" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
-                        <img className="mt-[6px]" src="/icon-advanced.svg" alt="" />
-                        <div >
-                            <h1 className="text-Blue-950 font-medium text-[18px]">Advanced</h1>
-                            <p className="text-Grey-500">$90/yr</p>
-                            {isYearly && <p className="text-Blue-950 text-[13px] mt-1 ">2 months free</p>}
-                        </div>
+                        <span
+                            onClick={() => handleClick("advanced")}
+                            className={`flex lg:flex-col lg:cursor-pointer lg:justify-between lg:w-[142px] lg:h-[166px] items-start justify-start gap-3 mt-4 mb-4 border  rounded-[8px] py-3 px-3 ${selectedPlan.id === "advanced" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
+                            <img className="mt-[6px]" src="/icon-advanced.svg" alt="" />
+                            <div className="lg:pb-[3px]">
+                                <h1 className="text-Blue-950 font-medium text-[18px]">Advanced</h1>
+                                <p className="text-Grey-500">$90/yr</p>
+                                {isYearly && <p className="text-Blue-950 text-[13px] mt-1 ">2 months free</p>}
+                            </div>
 
-                    </span>
-                    <span
-                        onClick={() => handleClick("pro")}
-                        className={`flex items-start justify-start gap-3 mt-4 mb-4 border  rounded-[8px] py-3 px-3 ${selectedPlan.id === "pro" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
-                        <img className="mt-[6px]" src="/icon-pro.svg" alt="" />
-                        <div >
-                            <h1 className="text-Blue-950 font-medium text-[18px]">Pro</h1>
-                            <p className="text-Grey-500">$90/yr</p>
-                            {isYearly && <p className="text-Blue-950 text-[13px] mt-1 ">2 months free</p>}
-                        </div>
+                        </span>
+                        <span
+                            onClick={() => handleClick("pro")}
+                            className={`lg:cursor-pointer flex lg:flex-col lg:justify-between  lg:w-[142px] lg:h-[167px] items-start justify-start gap-3 mt-4 mb-4 border  rounded-[8px] py-3 px-3 ${selectedPlan.id === "pro" ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-300"}`}>
+                            <img className="mt-[6px]" src="/icon-pro.svg" alt="" />
+                            <div className="lg:pb-[3px]">
+                                <h1 className="text-Blue-950 font-medium text-[18px]">Pro</h1>
+                                <p className="text-Grey-500">$90/yr</p>
+                                {isYearly && <p className="text-Blue-950 text-[13px] mt-1 ">2 months free</p>}
+                            </div>
 
-                    </span>
+                        </span>
 
-                    <span className="flex items-center justify-center rounded-[10px] gap-4 bg-[#F8F9FE] py-3">
-                        <p className={` font-medium  ${isYearly ? "text-Blue-950" : "text-Grey-500"}`}>Monthly</p>
+
+                    </div>
+
+                    <span className="flex lg:mt-5 items-center justify-center rounded-[10px] gap-4 bg-[#F8F9FE] py-3">
+                        <p className={` font-medium  ${isYearly ? "text-Grey-500" : " text-Blue-950"}`}>Monthly</p>
                         <SwitchToogle
                             checked={isYearly}
                             onCheckedChange={setIsYearly}
                         />
-                        <p className={` font-medium  ${isYearly ? "text-Grey-500" : " text-Blue-950"}`}>Yearly</p>
+                        <p className={` font-medium  ${isYearly ? "text-Blue-950" : "  text-Grey-500"}`}>Yearly</p>
 
                     </span>
 

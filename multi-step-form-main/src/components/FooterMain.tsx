@@ -59,7 +59,7 @@ export default function FooterMain({ className }: FooterMainProps) {
             <div className={` flex justify-between px-1 items-center  ${step <= 1 ? "justify-end" : ""}  `}>
                 {step > 1 && step < 5 && (<a
                     onClick={() => prevStep()}
-                    className="lg:cursor-pointer py-1 px-1 text-Grey-500 font-medium" href="#">Go Back</a>
+                    className="lg:cursor-pointer lg:ml-12 py-1 px-1 text-Grey-500 font-medium lg:hover:text-Blue-950" href="#">Go Back</a>
                 )}
 
                 {step <= 3 && (<button
