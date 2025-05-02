@@ -18,11 +18,11 @@ export default function CardStep2() {
     }
 
     return (
-        <div className="bg-Blue-100 flex-1 relative">
+        <div className=" flex-1 relative">
 
-            <div className="w-[90%] max-h-[calc(100dvh-190px)] overflow-y-auto pb-[110px]	 mx-auto  bg-White absolute -top-[69px]  py-6  left-1/2 transform -translate-x-1/2  rounded-lg  shadow-lg flex flex-col gap-4">
+            <div className="w-[90%] max-h-[calc(100dvh-190px)] overflow-y-auto pb-[110px] mx-auto bg-White absolute lg:static -top-[69px]  py-6  left-1/2 transform -translate-x-1/2 lg:translate-0  rounded-lg  shadow-lg flex flex-col gap-4 lg:bg-none lg:shadow-none">
 
-                <div className="mx-auto w-[85%] ">
+                <div className="mx-auto w-[85%] lg:w-[92%]">
 
                     <h1 className="text-Blue-950 font-bold text-2xl mb-2">Select your plan</h1>
                     <p className="text-Grey-500 text-[17px]">You have the option of monthly or yearly biling</p>

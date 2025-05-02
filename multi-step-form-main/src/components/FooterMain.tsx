@@ -1,14 +1,18 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Container from "./Container";
 import { useFormContext } from "@/contexts/FormContext";
+import { c } from "node_modules/vite/dist/node/moduleRunnerTransport.d-DJ_mE5sf";
 
+interface FooterMainProps {
+    className?: string;
+}
 
 type FormErrors = {
     name?: string;
     email?: string;
     phone?: string;
 };
-export default function FooterMain() {
+export default function FooterMain({ className }: FooterMainProps) {
 
     const { id } = useParams();
     const step = Number(id);
@@ -49,23 +53,23 @@ export default function FooterMain() {
 
 
     return (
-        <Container className={` py-5 ${step === 5 ? "bg-Blue-100" : "bg-White"} `}>
+        <Container className={` py-5 ${step === 5 ? "bg-Blue-100" : "bg-White"}  ${className} lg:pr-13`}>
 
 
-            <div className={`flex justify-between px-1 items-center  ${step <= 1 ? "justify-end" : ""}  `}>
+            <div className={` flex justify-between px-1 items-center  ${step <= 1 ? "justify-end" : ""}  `}>
                 {step > 1 && step < 5 && (<a
                     onClick={() => prevStep()}
-                    className="py-1 px-1 text-Grey-500 font-medium" href="#">Go Back</a>
+                    className="lg:cursor-pointer py-1 px-1 text-Grey-500 font-medium" href="#">Go Back</a>
                 )}
 
                 {step <= 3 && (<button
                     onClick={() => nextStep()}
-                    className="text-White  font-medium bg-Blue-950 px-4 py-2 rounded-[3px]">Next Step</button>)}
+                    className="lg:cursor-pointer text-White  font-medium bg-Blue-950 px-4 py-2 rounded-[3px]">Next Step</button>)}
 
 
                 {step === 4 && (<button
                     onClick={() => nextStep()}
-                    className="text-White  font-medium bg-Purple-600 px-5 py-2 rounded-[3px]">Confirm</button>)}
+                    className="lg:cursor-pointer text-White  font-medium bg-Purple-600 px-5 py-2 rounded-[3px]">Confirm</button>)}
 
             </div>
 

@@ -4,9 +4,9 @@ export default function CardStep5() {
 
 
     return (
-        <div className="bg-Blue-100 flex-1 relative">
+        <div className=" flex-1 relative">
 
-            <div className="w-[90%] mx-auto bg-White absolute -top-[69px]  py-7  left-1/2 transform -translate-x-1/2  rounded-lg  shadow-lg flex flex-col gap-4">
+            <div className="w-[90%] mx-auto bg-White absolute lg:static -top-[69px]  py-6  left-1/2 transform -translate-x-1/2 lg:translate-0  rounded-lg  shadow-lg flex flex-col gap-4 lg:bg-none lg:shadow-none">
 
                 <div className="mx-auto flex flex-col items-center pb-15 w-[85%] ">
 
