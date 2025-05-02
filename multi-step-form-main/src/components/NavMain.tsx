@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
 import Container from "./Container";
 
-interface NavMainProps {
-    className?: string;
-}
 
 
-export default function NavMain({ className }: NavMainProps) {
+
+export default function NavMain() {
 
     const { id } = useParams();
     const step = Number(id);
@@ -25,7 +23,7 @@ export default function NavMain({ className }: NavMainProps) {
     return (
 
 
-        <Container className={`bg-[url(/bg-sidebar-mobile.svg)] lg:bg-[url(/bg-sidebar-desktop.svg)] lg:h-full lg:w-[380px] lg:bg-bottom lg:rounded-2xl  bg-cover {className}`}>
+        <Container className={`bg-[url(/bg-sidebar-mobile.svg)] lg:bg-[url(/bg-sidebar-desktop.svg)] lg:h-full lg:w-[380px] lg:bg-bottom lg:rounded-2xl  bg-cover`}>
 
             <div className="flex items-center justify-center gap-4 pt-8 lg:pt-11 pb-26 lg:flex-col lg:items-start  lg:gap-8 lg:pl-10 lg:w-full">
                 {steps.map(({ number, title, description }, i) => (
