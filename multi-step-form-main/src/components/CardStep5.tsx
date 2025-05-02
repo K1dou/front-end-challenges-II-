@@ -10,7 +10,7 @@ export default function CardStep5() {
 
                 <div className="mx-auto flex flex-col items-center pb-15 w-[85%] ">
 
-                    <img className="h-13 w-13 mt-18" src="/icon-thank-you.svg" alt="" />
+                    <img className="h-13 w-13 mt-18 lg:mt-36" src="/icon-thank-you.svg" alt="" />
                     <h1 className="text-Blue-950 font-bold text-[23px] mt-6">Thank you!</h1>
                     <p className="text-Grey-500 text-pretty text-center">Thanks for confirming your subscription!
                         We hope you have fun using our platform. If you ever need support, please feel free to email us at

@@ -53,7 +53,7 @@ export default function CardStep4() {
                         <div className="flex justify-between">
                             <div>
                                 <p className="text-Blue-950 font-semibold text-[15px]">{selectedPlan.title} ({billingLabel})</p>
-                                <p onClick={() => navigate("/step/2")} className="text-Grey-500 underline text-[14px]">Change</p>
+                                <p onClick={() => navigate("/step/2")} className="text-Grey-500 underline text-[14px] lg:hover:text-Purple-600 lg:cursor-pointer">Change</p>
                             </div>
                             <span className="font-bold mt-3 text-Blue-950 text-[14px]">{isYearly ? selectedPlan.price.year : selectedPlan.price.month}</span>
 

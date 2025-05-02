@@ -53,7 +53,7 @@ export default function FooterMain({ className }: FooterMainProps) {
 
 
     return (
-        <Container className={` py-5 ${step === 5 ? "bg-Blue-100" : "bg-White"}  ${className} lg:pr-13`}>
+        <Container className={` py-5 ${step === 5 ? "bg-White" : ""}  ${className} lg:pr-13`}>
 
 
             <div className={` flex justify-between px-1 items-center  ${step <= 1 ? "justify-end" : ""}  `}>
