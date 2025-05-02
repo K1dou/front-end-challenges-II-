@@ -17,25 +17,27 @@ export default function CardStep3() {
                 <div className="mx-auto w-[85%] lg:w-[92%]">
 
                     <h1 className="text-Blue-950 font-bold text-2xl mb-2">Pick add-ons</h1>
-                    <p className="text-Grey-500 text-[17px]">Add-ons help enhance your gaming experience</p>
+                    <p className="text-Grey-500 text-[17px] lg:mb-9">Add-ons help enhance your gaming experience</p>
 
 
 
                     {addOns.map(addon => (
                         <div
                             key={addon.id}
-                            className={`flex justify-between items-center w-full mt-4 border rounded-[8px] py-2 px-3 ${addon.selected ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-400"
+                            className={`flex justify-between items-center w-full mt-4  border rounded-[8px] py-2 px-3 lg:py-4 lg:mt-5 ${addon.selected ? "border-Purple-600 bg-[#F8F9FE]" : "border-gray-400"
                                 }`}
                         >
-                            <CheckboxMain
-                                onChange={() => toggleAddOn(addon.id)}
-                                id={addon.id}
-                                checked={addon.selected}
+                            <div className="contents lg:flex lg:items-center lg:gap-5 ">
+                                <CheckboxMain
+                                    onChange={() => toggleAddOn(addon.id)}
+                                    id={addon.id}
+                                    checked={addon.selected}
 
-                            />
-                            <div>
-                                <h1 className="text-Blue-950 font-medium text-[15px]">{addon.title}</h1>
-                                <p className="text-Grey-500 text-[13px]">{addon.description}</p>
+                                />
+                                <div>
+                                    <h1 className="text-Blue-950 font-medium text-[15px]">{addon.title}</h1>
+                                    <p className="text-Grey-500 text-[13px]">{addon.description}</p>
+                                </div>
                             </div>
                             <p className="text-[13px] text-Purple-600 font-medium">{isYearly ? addon.price.year : addon.price.month}</p>
                         </div>

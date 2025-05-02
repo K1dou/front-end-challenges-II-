@@ -11,7 +11,7 @@ interface CheckboxProps {
 export default function CheckboxMain({ id, onChange, checked }: CheckboxProps) {
     return (
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 ">
             <Checkbox
                 onCheckedChange={onChange}
                 checked={checked}

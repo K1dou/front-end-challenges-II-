@@ -30,7 +30,7 @@ export default function NavMain({ className }: NavMainProps) {
             <div className="flex items-center justify-center gap-4 pt-8 lg:pt-11 pb-26 lg:flex-col lg:items-start  lg:gap-8 lg:pl-10 lg:w-full">
                 {steps.map(({ number, title, description }, i) => (
                     <>
-                        <div className="hidden  lg:flex gap-5">
+                        <div className="contents  lg:flex gap-5">
                             <div
                                 key={i}
                                 className={`w-8 h-8 lg:mt-[6px] flex items-center justify-center  rounded-full font-medium border transition-all 
