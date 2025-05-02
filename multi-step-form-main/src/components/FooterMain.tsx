@@ -63,12 +63,12 @@ export default function FooterMain({ className }: FooterMainProps) {
 
                 {step <= 3 && (<button
                     onClick={() => nextStep()}
-                    className="lg:cursor-pointer text-White  font-medium bg-Blue-950 px-4 py-2 rounded-[3px]">Next Step</button>)}
+                    className="lg:cursor-pointer text-White  font-medium bg-Blue-950 px-4 py-2 rounded-[3px]" aria-label="button next step">Next Step</button>)}
 
 
                 {step === 4 && (<button
                     onClick={() => nextStep()}
-                    className="lg:cursor-pointer text-White  font-medium bg-Purple-600 px-5 py-2 rounded-[3px]">Confirm</button>)}
+                    className="lg:cursor-pointer text-White  font-medium bg-Purple-600 px-5 py-2 rounded-[3px]" aria-label="button confirm step">Confirm</button>)}
 
             </div>
 
