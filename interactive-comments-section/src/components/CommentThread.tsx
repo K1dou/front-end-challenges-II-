@@ -1,3 +1,4 @@
+import { useLikeMutation } from "../hooks/useLikeMutation";
 import CardComment from "./CardComment";
 
 interface CommentThreadProps {
@@ -6,14 +7,20 @@ interface CommentThreadProps {
 }
 
 export default function CommentThread({ comment, level = 0 }: CommentThreadProps) {
+
+    const likeComment = useLikeMutation();
+
+
     return (
         <div className={`mt-4 ${level > 0 ? 'pl-6 ml-4 border-l-2 border-gray-200' : ''}`}>
             <CardComment
+                createdAt={comment.createdAt}
                 id={comment.id}
                 name={comment.author.username}
                 content={comment.content}
                 like={comment.likeCount || 0}
                 src={comment.author.avatarUrl}
+                onClick={() => likeComment.mutate(comment.id)}
             />
 
             {comment.replies?.length > 0 && (

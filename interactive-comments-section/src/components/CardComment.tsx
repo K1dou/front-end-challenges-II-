@@ -1,4 +1,4 @@
-import { useLikeMutation } from "../hooks/useLikeMutation";
+import { formatRelativeDate } from "../utils/date";
 
 interface CardCommentProps {
     id: number;
@@ -6,11 +6,13 @@ interface CardCommentProps {
     content: string;
     like: number;
     src: string;
+    onClick?: () => void;
+    createdAt: string;
 }
 
-export default function CardComment({ name, content, like, src, id }: CardCommentProps) {
+export default function CardComment({ name, content, like, src, id, onClick, createdAt }: CardCommentProps) {
 
-    const likeComment = useLikeMutation();
+
 
 
     return (
@@ -18,7 +20,7 @@ export default function CardComment({ name, content, like, src, id }: CardCommen
             <div className="flex items-center gap-3">
                 <img className="h-9 w-9" src={src} alt="" />
                 <p className="font-semibold">{name}</p>
-                <p className="text-gray-500 font-normal">1 month ago</p>
+                <p className="text-gray-500 font-normal text-[12px]">{formatRelativeDate(createdAt)}</p>
             </div>
 
             <div className="mt-3">
@@ -30,7 +32,7 @@ export default function CardComment({ name, content, like, src, id }: CardCommen
             <div className="flex justify-between mt-4 gap-2 ">
                 <div className="bg-[#F5F6FA] gap-3 flex items-center rounded-[10px] py-2 px-2">
                     <button
-                        onClick={() => likeComment.mutate(id)}
+                        onClick={onClick}
                         className="p-1 rounded-full hover:bg-gray-200 "
                     >
                         <img src="/icon-plus.svg" alt="" />
