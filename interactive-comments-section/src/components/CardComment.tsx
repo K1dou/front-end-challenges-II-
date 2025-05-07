@@ -1,3 +1,4 @@
+import { useLoginContext } from "../contexts/UserContext";
 import { formatRelativeDate } from "../utils/date";
 
 interface CardCommentProps {
@@ -6,21 +7,24 @@ interface CardCommentProps {
     content: string;
     like: number;
     src: string;
-    onClick?: () => void;
+    onClickLike?: () => void;
+    onClickUnlike?: () => void;
     createdAt: string;
 }
 
-export default function CardComment({ name, content, like, src, id, onClick, createdAt }: CardCommentProps) {
+export default function CardComment({ name, content, like, src, id, onClickLike, onClickUnlike, createdAt }: CardCommentProps) {
 
 
+    const { user } = useLoginContext();
 
 
     return (
 
         <main className="py-3 bg-White px-3 rounded-[10px]">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center  gap-3">
                 <img className="h-9 w-9" src={src} alt="" />
                 <p className="font-semibold">{name}</p>
+                {user?.id === id && <span className="bg-[#5758AB] text-White rounded-2xl px-2 py-1 text-[10px]">You</span>}
                 <p className="text-gray-500 font-normal text-[12px]">{formatRelativeDate(createdAt)}</p>
             </div>
 
@@ -33,14 +37,16 @@ export default function CardComment({ name, content, like, src, id, onClick, cre
             <div className="flex justify-between mt-4 gap-2 ">
                 <div className="bg-[#F5F6FA] gap-3 flex items-center rounded-[10px] py-2 px-2">
                     <button
-                        onClick={onClick}
+                        onClick={onClickLike}
                         className="p-1 rounded-full hover:bg-gray-200 "
                     >
                         <img src="/icon-plus.svg" alt="" />
                     </button>
                     <span className="font-bold text-[#5758AB]">{like}</span>
 
-                    <button className="p-1 rounded-full hover:bg-gray-200 text-gray-500">
+                    <button
+                        onClick={onClickUnlike}
+                        className="p-1 rounded-full hover:bg-gray-200 text-gray-500">
                         <img src="/icon-minus.svg" alt="" />
                     </button>
                 </div>

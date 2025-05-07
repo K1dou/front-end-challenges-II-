@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
-export function useLikeMutation() {
+export function useUnlikeMutation() {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -13,7 +13,7 @@ export function useLikeMutation() {
       userId: number;
     }) =>
       axios.post(
-        `https://comments-api-c43806001036.herokuapp.com/api/v1/comments/${commentId}/${userId}/like`
+        `https://comments-api-c43806001036.herokuapp.com/api/v1/comments/${commentId}/${userId}/unlike`
       ),
 
     onSuccess: () => {

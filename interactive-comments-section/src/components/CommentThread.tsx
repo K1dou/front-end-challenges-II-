@@ -1,4 +1,6 @@
+import { useLoginContext } from "../contexts/UserContext";
 import { useLikeMutation } from "../hooks/useLikeMutation";
+import { useUnlikeMutation } from "../hooks/useUnlikeMutation";
 import CardComment from "./CardComment";
 
 interface CommentThreadProps {
@@ -9,18 +11,22 @@ interface CommentThreadProps {
 export default function CommentThread({ comment, level = 0 }: CommentThreadProps) {
 
     const likeComment = useLikeMutation();
+    const unlikeComent = useUnlikeMutation();
+
+    const { user } = useLoginContext();
 
 
     return (
         <div className={`pt-6 ${level > 0 ? 'pl-6 ml-4 border-l-2 border-gray-200' : ''}`}>
             <CardComment
                 createdAt={comment.createdAt}
-                id={comment.id}
-                name={comment.author.username}
+                id={comment.author.id}
+                name={comment.author.nome}
                 content={comment.content}
                 like={comment.likeCount || 0}
                 src={comment.author.avatarUrl}
-                onClick={() => likeComment.mutate(comment.id)}
+                onClickLike={() => user?.id && likeComment.mutate({ commentId: comment.id, userId: user.id })}
+                onClickUnlike={() => user?.id && unlikeComent.mutate({ commentId: comment.id, userId: user.id })}
             />
 
             {comment.replies?.length > 0 && (
