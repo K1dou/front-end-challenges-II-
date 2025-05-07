@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Container>
+      <Container className='min-h-dvh bg-Grey-50'>
         {data?.map((comment: any) => (
           <CommentThread key={comment.id} comment={comment} />
         ))}

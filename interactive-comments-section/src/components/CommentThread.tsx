@@ -12,7 +12,7 @@ export default function CommentThread({ comment, level = 0 }: CommentThreadProps
 
 
     return (
-        <div className={`mt-4 ${level > 0 ? 'pl-6 ml-4 border-l-2 border-gray-200' : ''}`}>
+        <div className={`pt-6 ${level > 0 ? 'pl-6 ml-4 border-l-2 border-gray-200' : ''}`}>
             <CardComment
                 createdAt={comment.createdAt}
                 id={comment.id}

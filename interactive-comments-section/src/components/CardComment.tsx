@@ -16,6 +16,7 @@ export default function CardComment({ name, content, like, src, id, onClick, cre
 
 
     return (
+
         <main className="py-3 bg-White px-3 rounded-[10px]">
             <div className="flex items-center gap-3">
                 <img className="h-9 w-9" src={src} alt="" />
