@@ -13,6 +13,15 @@ export default function CommentThread({ comment, level = 0 }: CommentThreadProps
     const unlikeComent = useUnlikeMutation();
     const { user } = useLoginContext();
 
+    // Junta replies e netos num único array
+    const flattenedReplies =
+        level === 0
+            ? [
+                ...(comment.replies || []),
+                ...comment.replies?.flatMap((r: any) => r.replies || []) || [],
+            ]
+            : [];
+
     return (
         <div className={`pt-6 ${level > 0 ? 'pl-6 ml-4 border-l-2 border-gray-200' : ''}`}>
             <CardComment
@@ -31,10 +40,10 @@ export default function CommentThread({ comment, level = 0 }: CommentThreadProps
                 }
             />
 
-            {comment.replies?.length > 0 && (
+            {flattenedReplies.length > 0 && (
                 <div className="flex flex-col gap-4 mt-2">
-                    {comment.replies.map((reply: any) => (
-                        <CommentThread key={reply.id} comment={reply} level={level + 1} />
+                    {flattenedReplies.map((reply: any) => (
+                        <CommentThread key={reply.id} comment={reply} level={1} />
                     ))}
                 </div>
             )}
