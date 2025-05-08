@@ -82,7 +82,7 @@ export default function CardComment({ name, content, like, src, id, idAuthor, on
                         <textarea
                             value={editedContent}
                             onChange={(e) => setEditedContent(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none"
                         />
                     ) : (
                         <p className="text-gray-500 font-regular">{renderContentWithMention(content)}</p>

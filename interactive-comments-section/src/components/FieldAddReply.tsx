@@ -40,7 +40,7 @@ export default function FieldAddReply({ className, parentId, onClick, parentAuth
             <textarea
                 value={text}
                 onChange={handleChangeText}
-                className="w-full h-24 pl-4 pt-2 border-1 border-gray-300 rounded-[7px] font-regular focus:outline-none"
+                className="w-full h-24 pl-4 pt-2 border-1  border-gray-300 rounded-[7px] font-regular focus:outline-none"
                 placeholder="Add a comment..."
             ></textarea>
 
