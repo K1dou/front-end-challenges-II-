@@ -15,7 +15,7 @@ export async function login({
 export async function getMe(token: string) {
   const res = await api.get('/users/me', {
     headers: {
-      Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb21tZW50cy1hcGkiLCJpYXQiOjE3NDY2NTE2MDUsImV4cCI6MTc0NjY2NjAwNSwic3ViIjoianVsaW9AZ21haWwuY29tIn0.tbMBIfPrZJ3U9tS3VWNOI64arEBgrBQ7SDsCdvBkTUE'}`,
+      Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb21tZW50cy1hcGkiLCJpYXQiOjE3NDY3MTc3NTIsImV4cCI6MTc0NjczMjE1Miwic3ViIjoiaGlxdWUxMjc2QGdtYWlsLmNvbSJ9.dRb8NlTvWdY7Q91Dbh_v0DE0OEYpNpHAvxds-va83Jw'}`,
     },
   });
 

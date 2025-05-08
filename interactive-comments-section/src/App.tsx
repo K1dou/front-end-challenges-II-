@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
-import CardComment from './components/CardComment'
+import { useEffect, useState } from 'react';
 import CommentThread from './components/CommentThread';
-import Container from './components/Container'
-import { useComments } from './hooks/useComments'
-import { useLogin } from './hooks/useLogin';
-import './index.css'
+import Container from './components/Container';
+import FieldAddComent from './components/FieldAddComent';
 import { useLoginContext } from './contexts/UserContext';
+import { useComments } from './hooks/useComments';
+import { useLogin } from './hooks/useLogin';
 import { useUser } from './hooks/useUser';
+import './index.css';
 
 function App() {
 
@@ -40,10 +40,12 @@ function App() {
 
   return (
     <>
-      <Container className='min-h-dvh bg-Grey-50'>
+      <Container className='min-h-dvh bg-Grey-50 pb-8'>
         {data?.content?.map((comment: any) => (
           <CommentThread key={comment.id} comment={comment} />
         ))}
+
+        <FieldAddComent type='send' className='mt-4 ' />
       </Container>
     </>
   )

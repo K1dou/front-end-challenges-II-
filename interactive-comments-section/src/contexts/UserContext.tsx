@@ -5,7 +5,7 @@ import type { ReactNode } from 'react';
 interface User {
     id: number;
     username: string;
-    avatar: string;
+    avatarUrl: string;
 }
 
 interface UserContextType {

@@ -1,7 +1,13 @@
-import { formatDistance } from 'date-fns';
+import { formatDistanceToNow } from 'date-fns';
+import { enUS } from 'date-fns/locale';
 
 export function formatRelativeDate(dateString: string) {
-  return formatDistance(new Date(dateString), new Date(), {
+  const cleaned = dateString.replace(/\.\d+$/, '') + 'Z';
+
+  const utcDate = new Date(cleaned);
+
+  return formatDistanceToNow(utcDate, {
     addSuffix: true,
+    locale: enUS,
   });
 }

@@ -20,7 +20,8 @@ export default function CommentThread({ comment, level = 0 }: CommentThreadProps
         <div className={`pt-6 ${level > 0 ? 'pl-6 ml-4 border-l-2 border-gray-200' : ''}`}>
             <CardComment
                 createdAt={comment.createdAt}
-                id={comment.author.id}
+                id={comment.id}
+                idAuthor={comment.author.id}
                 name={comment.author.nome}
                 content={comment.content}
                 like={comment.likeCount || 0}
