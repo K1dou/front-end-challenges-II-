@@ -4,6 +4,7 @@ import { useDeleteComment } from "../hooks/useDeleteComment";
 import { useUpdateComment } from "../hooks/useUpdateComment";
 import { formatRelativeDate } from "../utils/date";
 import FieldAddReply from "./FieldAddReply";
+import ModalDelete from "./ModalDelete";
 
 interface CardCommentProps {
     id: number;
@@ -128,12 +129,9 @@ export default function CardComment({ name, content, like, src, id, idAuthor, on
                                 </>
                             ) : (
                                 <>
-                                    <button
-                                        onClick={handleDeleteComment}
-                                        className="flex text-Pink-400 items-center gap-1 font-bold"
-                                    >
-                                        <img className="h-3 w-3" src="icon-delete.svg" alt="" /> Delete
-                                    </button>
+
+
+                                    <ModalDelete onDelete={handleDeleteComment} />
                                     <button
                                         onClick={() => setIsEditing(true)}
                                         className="flex text-[#5758AB] items-center gap-1 font-bold"
