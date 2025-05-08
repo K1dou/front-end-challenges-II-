@@ -13,7 +13,6 @@ export default function CommentThread({ comment, level = 0 }: CommentThreadProps
     const unlikeComent = useUnlikeMutation();
     const { user } = useLoginContext();
 
-    // Junta replies e netos num único array
     const flattenedReplies =
         level === 0
             ? [
