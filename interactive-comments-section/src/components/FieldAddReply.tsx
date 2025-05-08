@@ -15,7 +15,7 @@ export default function FieldAddReply({ className, parentId, onClick, parentAuth
 
 
     const { user } = useLoginContext();
-    const [text, setText] = useState<string>(`@${parentAuthorName}`);
+    const [text, setText] = useState<string>(`@${parentAuthorName} `);
     const replyComment = useReplyMutation();
 
 

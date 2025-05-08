@@ -30,10 +30,10 @@ export default function CommentThread({ comment, level = 0 }: CommentThreadProps
                 onClickUnlike={() => user?.id && unlikeComent.mutate({ commentId: comment.id, userId: user.id })}
             />
 
-            {comment.replies?.length > 0 && (
+            {level < 1 && comment.replies?.length > 0 && (
                 <div className="flex flex-col gap-4 mt-2">
                     {comment.replies.map((reply: any) => (
-                        <CommentThread key={reply.id} comment={reply} level={level + 1} />
+                        <CommentThread key={reply.id} comment={reply} level={1} />
                     ))}
                 </div>
             )}
