@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import Navbar from "./NavBar";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -22,8 +23,7 @@ const Login = () => {
 
             });
             const { token, refreshToken } = res.data;
-            console.log("Token:", token);
-            console.log("Refresh Token:", refreshToken);
+
 
             if (token && refreshToken) {
                 localStorage.setItem("token", token);
@@ -40,6 +40,8 @@ const Login = () => {
 
     return (
         <div className="min-h-dvh bg-gray-900 text-white flex items-center justify-center px-4">
+
+
             <div className="w-full max-w-md bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
                 <h1 className="text-3xl font-bold text-center mb-6">Entrar</h1>
 

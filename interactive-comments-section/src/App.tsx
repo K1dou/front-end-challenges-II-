@@ -7,6 +7,7 @@ import { useLoginContext } from './contexts/UserContext';
 import { useInfiniteComments } from './hooks/useInfiniteComments';
 import { useUser } from './hooks/useUser';
 import './index.css';
+import Navbar from './components/NavBar';
 
 function App() {
   const { setUser } = useLoginContext();
@@ -39,6 +40,8 @@ function App() {
 
   return (
     <Container className='min-h-dvh bg-Grey-50 pb-8'>
+
+      <Navbar />
       {comments.map((comment: any) => (
         <CommentThread key={comment.id} comment={comment} />
       ))}
