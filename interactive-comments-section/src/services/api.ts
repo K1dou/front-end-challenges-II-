@@ -42,6 +42,7 @@ api.interceptors.response.use(
         console.error('Erro ao renovar token:', err);
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
+        console.log('Token expirado ou inválido. Redirecionando para login.');
         window.location.href = '/login'; // força login
         return Promise.reject(err);
       }

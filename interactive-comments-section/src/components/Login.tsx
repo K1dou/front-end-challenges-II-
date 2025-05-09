@@ -21,10 +21,10 @@ const Login = () => {
                 password
 
             });
-            const { accessToken, refreshToken } = res.data;
+            const { token, refreshToken } = res.data;
 
-            if (accessToken && refreshToken) {
-                localStorage.setItem("token", accessToken);
+            if (token && refreshToken) {
+                localStorage.setItem("token", token);
                 localStorage.setItem("refreshToken", refreshToken);
                 navigate("/");
             } else {
