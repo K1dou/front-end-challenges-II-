@@ -1,27 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import CommentThread from './components/CommentThread';
 import Container from './components/Container';
 import FieldAddComent from './components/FieldAddComent';
 import { useLoginContext } from './contexts/UserContext';
-import { useLogin } from './hooks/useLogin';
+import { useInfiniteComments } from './hooks/useInfiniteComments';
 import { useUser } from './hooks/useUser';
 import './index.css';
-import { useInfiniteComments } from './hooks/useInfiniteComments';
-import { useInView } from 'react-intersection-observer';
 
 function App() {
-  const loginMutation = useLogin();
-  const { user, setUser } = useLoginContext();
-  const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+  const { setUser } = useLoginContext();
 
-  // useEffect(() => {
-  //   if (!token) {
-  //     loginMutation.mutate({
-  //       email: 'julio@gmail.com',
-  //       password: '123456',
-  //     });
-  //   }
-  // }, []);
+
 
   const { data: userData } = useUser();
   useEffect(() => {
