@@ -42,6 +42,7 @@ function App() {
     <Container className='min-h-dvh bg-Grey-50 pb-8'>
 
       <Navbar />
+
       {comments.map((comment: any) => (
         <CommentThread key={comment.id} comment={comment} />
       ))}
