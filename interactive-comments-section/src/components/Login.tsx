@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [avatar, setAvatar] = useState<File | null>(null);
+    const [avatar] = useState<File | null>(null);
     const navigate = useNavigate();
 
     const handleLogin = (provider: string) => {
