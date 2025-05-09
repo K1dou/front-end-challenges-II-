@@ -16,7 +16,7 @@ export default function Navbar() {
             <button
                 aria-label="logout"
                 onClick={handleLogout}
-                className="bg-red-600 hover:bg-red-700 px-4 py-1.5 rounded-md text-sm font-semibold transition"
+                className="cursor-pointer bg-red-600 hover:bg-red-700 px-4 py-1.5 rounded-md text-sm font-semibold transition"
             >
                 Logout
             </button>

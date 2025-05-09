@@ -1,4 +1,3 @@
-// src/services/authService.ts
 import { api } from './api';
 
 export async function login({
