@@ -14,16 +14,16 @@ function App() {
   const { user, setUser } = useLoginContext();
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
 
-  useEffect(() => {
-    if (!token) {
-      loginMutation.mutate({
-        email: 'julio@gmail.com',
-        password: '123456',
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!token) {
+  //     loginMutation.mutate({
+  //       email: 'julio@gmail.com',
+  //       password: '123456',
+  //     });
+  //   }
+  // }, []);
 
-  const { data: userData } = useUser(token);
+  const { data: userData } = useUser();
   useEffect(() => {
     if (userData) {
       setUser(userData);

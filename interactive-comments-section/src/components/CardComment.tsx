@@ -130,7 +130,6 @@ export default function CardComment({ name, content, like, src, id, idAuthor, on
                             ) : (
                                 <>
 
-
                                     <ModalDelete onDelete={handleDeleteComment} />
                                     <button
                                         onClick={() => setIsEditing(true)}

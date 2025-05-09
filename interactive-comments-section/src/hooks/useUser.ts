@@ -1,11 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { getMe } from '../services/authService';
 
-export function useUser(token: string | null) {
+export function useUser() {
   return useQuery({
     queryKey: ['me'],
-    queryFn: () => getMe(token!),
-    enabled: !!token,
+    queryFn: () => getMe(),
     retry: false,
   });
 }
