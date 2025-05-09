@@ -9,13 +9,17 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [avatarUrl, setAvatar] = useState<File | null>(null);
 
+    const user = {
+        nome,
+        email,
+        password
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append("nome", nome);
-        formData.append("email", email);
-        formData.append("password", password);
+        formData.append("usuario", new Blob([JSON.stringify(user)], { type: "application/json" }));
         if (avatarUrl) {
             formData.append("avatar", avatarUrl);
         }
@@ -23,13 +27,18 @@ export default function Register() {
         try {
             await axios.post(
                 "https://comments-api-c43806001036.herokuapp.com/users/createUser",
-                formData
+                formData,
+                {
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    }
+                }
             );
 
             navigate("/login");
         } catch (error) {
-            console.error(error);
-            alert("Erro ao registrar.");
+            console.error("Erro ao registrar:", error);
+            alert("Erro ao registrar. Verifique os dados.");
         }
     };
 

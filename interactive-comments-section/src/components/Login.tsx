@@ -13,13 +13,14 @@ const Login = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append("email", email);
-        formData.append("password", password);
-
 
         try {
-            const res = await axios.post("https://comments-api-c43806001036.herokuapp.com/users/login", formData);
+
+            const res = await axios.post("https://comments-api-c43806001036.herokuapp.com/users/login", {
+                email,
+                password
+
+            });
             const { accessToken, refreshToken } = res.data;
 
             if (accessToken && refreshToken) {

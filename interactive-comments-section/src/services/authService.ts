@@ -13,7 +13,23 @@ export async function login({
 }
 
 export async function getMe() {
-  const res = await api.get('/users/me', {});
+  try {
+    const res = await api.get('/users/me');
+    return res.data;
+  } catch (error: any) {
+    console.error('Erro ao buscar usuário autenticado:', error);
 
-  return res.data;
+    if (
+      error?.response?.status === 401 ||
+      error?.response?.status === 403 ||
+      error?.response?.status === 302 ||
+      error?.message === 'Network Error'
+    ) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('refreshToken');
+      window.location.href = '/login';
+    }
+
+    throw error;
+  }
 }
