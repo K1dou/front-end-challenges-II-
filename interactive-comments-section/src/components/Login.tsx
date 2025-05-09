@@ -5,7 +5,6 @@ import { useNavigate } from "react-router";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [avatar] = useState<File | null>(null);
     const navigate = useNavigate();
 
     const handleLogin = (provider: string) => {
@@ -17,9 +16,6 @@ const Login = () => {
         const formData = new FormData();
         formData.append("email", email);
         formData.append("password", password);
-        if (avatar) {
-            formData.append("avatar", avatar);
-        }
 
 
         try {
