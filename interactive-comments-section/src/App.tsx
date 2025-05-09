@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
 import CommentThread from './components/CommentThread';
 import Container from './components/Container';
 import FieldAddComent from './components/FieldAddComent';
+import Navbar from './components/NavBar';
 import { useLoginContext } from './contexts/UserContext';
 import { useInfiniteComments } from './hooks/useInfiniteComments';
 import { useUser } from './hooks/useUser';
 import './index.css';
-import Navbar from './components/NavBar';
 
 function App() {
   const { setUser } = useLoginContext();
@@ -28,29 +27,35 @@ function App() {
     isFetchingNextPage,
   } = useInfiniteComments();
 
-  const { ref, inView } = useInView();
 
-  useEffect(() => {
-    if (inView && hasNextPage) {
-      fetchNextPage();
-    }
-  }, [inView, hasNextPage, fetchNextPage]);
+
+
 
   const comments = paginatedCommentsData?.pages.flatMap((page) => page.content) ?? [];
 
   return (
-    <Container className='min-h-dvh bg-Grey-50 pb-8'>
+    <Container className=' min-h-dvh bg-Grey-50 pb-8 md:w-[850px]'>
 
       <Navbar />
+      <div className='pb-16'></div>
 
       {comments.map((comment: any) => (
         <CommentThread key={comment.id} comment={comment} />
       ))}
 
-      <div ref={ref} style={{ height: 1 }} />
-      {isFetchingNextPage && <p className="text-center mt-4">Carregando mais...</p>}
+      {hasNextPage && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => fetchNextPage()}
+            disabled={isFetchingNextPage}
+            className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition disabled:opacity-50"
+          >
+            {isFetchingNextPage ? 'Carregando...' : 'Carregar mais comentários'}
+          </button>
+        </div>
+      )}
 
-      <FieldAddComent className='mt-4' />
+      <FieldAddComent className='mt-4 ' />
     </Container>
   );
 }

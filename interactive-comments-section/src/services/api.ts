@@ -37,13 +37,13 @@ api.interceptors.response.use(
         api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
         originalRequest.headers['Authorization'] = `Bearer ${accessToken}`;
 
-        return api(originalRequest); // refaz a requisição original
+        return api(originalRequest);
       } catch (err) {
         console.error('Erro ao renovar token:', err);
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
         console.log('Token expirado ou inválido. Redirecionando para login.');
-        window.location.href = '/login'; // força login
+        window.location.href = '/login';
         return Promise.reject(err);
       }
     }

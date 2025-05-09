@@ -100,12 +100,14 @@ export default function Register() {
                         />
                     </div>
                     <button
+                        aria-label="register"
                         type="submit"
                         className="w-full bg-green-600 hover:bg-green-700 transition py-2 px-4 rounded-md font-semibold"
                     >
                         Registrar
                     </button>
                     <button
+                        aria-label="login"
                         type="button"
                         onClick={() => navigate("/login")}
                         className="w-full text-sm text-blue-400 mt-2 hover:underline"

@@ -93,16 +93,18 @@ export default function CardComment({ name, content, like, src, id, idAuthor, on
                 <div className="flex justify-between mt-4 gap-2 ">
                     <div className="bg-[#F5F6FA] gap-3 flex items-center rounded-[10px] py-2 px-2">
                         <button
+                            aria-label="like"
                             onClick={onClickLike}
-                            className="p-1 rounded-full hover:bg-gray-200 "
+                            className="cursor-pointer p-1 rounded-full hover:bg-gray-200 "
                         >
                             <img src="/icon-plus.svg" alt="" />
                         </button>
                         <span className="font-bold text-[#5758AB]">{like}</span>
 
                         <button
+                            aria-label="unlike"
                             onClick={onClickUnlike}
-                            className="p-1 rounded-full hover:bg-gray-200 text-gray-500">
+                            className="cursor-pointer p-1 rounded-full hover:bg-gray-200 text-gray-500">
                             <img src="/icon-minus.svg" alt="" />
                         </button>
                     </div>
@@ -112,17 +114,19 @@ export default function CardComment({ name, content, like, src, id, idAuthor, on
                             {isEditing ? (
                                 <>
                                     <button
+                                        aria-label="update"
                                         onClick={handleUpdateComment}
-                                        className="flex text-white bg-[#5758AB] px-3 py-1 rounded-md font-bold"
+                                        className="cursor-pointer flex text-white bg-[#5758AB] px-3 py-1 rounded-md font-bold"
                                     >
                                         Update
                                     </button>
                                     <button
+                                        aria-label="cancel"
                                         onClick={() => {
                                             setIsEditing(false);
                                             setEditedContent(content);
                                         }}
-                                        className="text-gray-500 text-sm"
+                                        className="cursor-pointer text-gray-500 text-sm"
                                     >
                                         Cancel
                                     </button>
@@ -132,8 +136,9 @@ export default function CardComment({ name, content, like, src, id, idAuthor, on
 
                                     <ModalDelete onDelete={handleDeleteComment} />
                                     <button
+                                        aria-label="delete"
                                         onClick={() => setIsEditing(true)}
-                                        className="flex text-[#5758AB] items-center gap-1 font-bold"
+                                        className="cursor-pointer flex text-[#5758AB] items-center gap-1 font-bold"
                                     >
                                         <img className="h-3 w-3" src="icon-edit.svg" alt="" /> Edit
                                     </button>
@@ -142,8 +147,9 @@ export default function CardComment({ name, content, like, src, id, idAuthor, on
                         </div>
                     ) : (
                         <button
+                            aria-label="reply"
                             onClick={handleReply}
-                            className="flex gap-2 items-center text-[#5758AB] font-bold"
+                            className="cursor-pointer flex gap-2 items-center text-[#5758AB] font-bold"
                         >
                             <img className="h-4 w-4" src="/icon-reply.svg" alt="" />
                             Reply

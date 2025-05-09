@@ -23,7 +23,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/oauth2/callback" element={<OAuth2Callback />} />
 
 
-            <Route path="/" element={<ProtectedRoute>  <App />  </ProtectedRoute>} />
+            <Route path="/" element={<ProtectedRoute> <App /> </ProtectedRoute>} />
 
 
           </Routes>

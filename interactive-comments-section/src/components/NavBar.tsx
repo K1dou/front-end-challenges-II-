@@ -10,10 +10,11 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-gray-900 text-white px-6 py-4 shadow-md flex justify-between items-center fixed top-0 left-0 right-0 z-50">
+        <nav className="bg-gray-900 text-white px-6 py-4 shadow-md flex justify-between items-center fixed top-0 left-0 right-0 z-50 ">
             <h1 className="text-xl font-bold tracking-wide">💬 Comments</h1>
 
             <button
+                aria-label="logout"
                 onClick={handleLogout}
                 className="bg-red-600 hover:bg-red-700 px-4 py-1.5 rounded-md text-sm font-semibold transition"
             >

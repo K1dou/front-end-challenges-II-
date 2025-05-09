@@ -62,12 +62,14 @@ const Login = () => {
                         required
                     />
                     <button
+                        aria-label="login"
                         type="submit"
                         className="w-full bg-blue-600 hover:bg-blue-700 transition py-2 px-4 rounded-md font-semibold"
                     >
                         Login
                     </button>
                     <button
+                        aria-label="login-google"
                         type="button"
                         onClick={() => handleLogin("google")}
                         className="w-full bg-white text-gray-900 font-semibold py-2 px-4 rounded-md flex items-center justify-center gap-3 hover:bg-gray-100 transition"
@@ -79,6 +81,7 @@ const Login = () => {
                 <p className="text-center text-gray-400 text-sm mt-6">
                     Não tem uma conta?{" "}
                     <button
+                        aria-label="register"
                         onClick={() => navigate("/register")}
                         className="underline text-blue-400 hover:text-blue-300"
                     >
