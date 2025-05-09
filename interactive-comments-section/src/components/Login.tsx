@@ -22,6 +22,8 @@ const Login = () => {
 
             });
             const { token, refreshToken } = res.data;
+            console.log("Token:", token);
+            console.log("Refresh Token:", refreshToken);
 
             if (token && refreshToken) {
                 localStorage.setItem("token", token);
