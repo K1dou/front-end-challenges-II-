@@ -8,9 +8,11 @@ const OAuth2Callback = () => {
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         const token = params.get('token');
+        const refreshToken = params.get('refreshToken');
 
-        if (token) {
+        if (token && refreshToken) {
             localStorage.setItem('token', token);
+            localStorage.setItem('refreshToken', refreshToken);
             navigate('/');
         } else {
             console.error('Token não encontrado na URL');

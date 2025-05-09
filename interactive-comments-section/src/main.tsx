@@ -9,6 +9,7 @@ import { UserProvider } from './contexts/UserContext.tsx'
 import Login from './components/Login.tsx';
 import OAuth2Callback from './components/Oauth2Callback.tsx';
 import ProtectedRoute from './router/ProtectedRoute.tsx';
+import Register from './components/Register.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
         <QueryClientProvider client={new QueryClient()}>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/oauth2/callback" element={<OAuth2Callback />} />
 
 
