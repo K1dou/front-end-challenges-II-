@@ -2,7 +2,7 @@
 
 const Login = () => {
     const handleLogin = (provider: string) => {
-        window.location.href = `http://localhost:8080/oauth2/authorization/${provider}`;
+        window.location.href = `https://comments-api-c43806001036.herokuapp.com/oauth2/authorization/${provider}`;
     };
 
     return (
